@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLY SMASH CHAMPIONSHIP 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="LOGOFSC.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #1d3557;
+            --accent: #f1faee;
+            --light: #a8dadc;
+            --dark: #457b9d;
+            --text: #333;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--accent);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+            background: linear-gradient(to right, var(--white), var(--light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        nav {
+            display: flex;
+        }
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Banner */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            overflow: hidden;
+            /*margin-bottom: 2rem;*/
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--white);
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        /* Sections */
+        section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .partners {
+            margin-top: 2rem;
+        }
+        
+        .partner-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .partner-logos img {
+            height: 150px;
+            object-fit: contain;
+            filter: grayscale(1%);
+            transition: filter 0.3s;
+        }
+        
+        .partner-logos img:hover {
+            filter: grayscale(0%);
+        }
+        
+        /* Rules Section */
+        .rules-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .rule-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .rule-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Teams Section */
+        .teams-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-header {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+        
+        .team-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+            border: 2px solid var(--white);
+        }
+        
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .players-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .players-table th, .players-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .players-table th {
+            background-color: var(--light);
+            color: var(--secondary);
+        }
+        
+        .players-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Fixture Section */
+        .fixture-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fixture-table th, .fixture-table td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        .fixture-table th {
+            background-color: var(--secondary);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        .fixture-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .fixture-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .match-result {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--secondary);
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #c1121f;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: none;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                padding: 0.5rem 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .hero {
+                height: 50vh;
+                min-height: 300px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .fixture-table th, .fixture-table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 40vh;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .team-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .team-logo {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+            
+            .players-table th, .players-table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-table-tennis"></i>
+                <h1>FSC2025</h1>
+            </div>
+            
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#rules">Rules</a></li>
+                    <li><a href="#teams">Teams</a></li>
+                    <li><a href="#fixture">Fixture</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section id="home" class="hero">
+        <!--<img src="FSC1.png" alt="Badminton Tournament" class="hero-image">-->
+        <div class="hero-content">
+            <h2>FLY SMASH CHAMPIONSHIP 2025</h2>
+            <p>UPNM's premier badminton championship – nurturing talent, sportsmanship, and excellence through competitive play.</p>
+            <a href="#fixture" class="btn">View Fixtures</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>About The Tournament</h3>
+                    <p>This program is a badminton championship specially organized for UPNM students, aiming to provide a dynamic platform for them to showcase their skills and talents in badminton. The championship also aims to strengthen relationships between students from various faculties and residential colleges through healthy competition and foster camaraderie among students. By combining elements of sports and education, the Fly Smash Championship not only gives participants the opportunity to improve their badminton performance but also promotes an active and healthy lifestyle among students. This championship has become a highly anticipated event where each match not only showcases players' excellence but also high sportsmanship spirit. Additionally, the Fly Smash Championship opens opportunities for sponsors and external communities to support youth sports development, thereby strengthening collaborative networks between the university and industry.</p>
+		     
+                    <div class="partners">
+                        <h4>Organized By:</h4>
+                        <div class="partner-logos">
+                            <img src="LOGOSMASH.png" alt="Badminton Association">
+                            <img src="LOGOMTKJ.png" alt="MTKJ">
+                        </div>
+                    </div>
+                    
+                    <!--<div class="partners">
+                        <h4>In Collaboration With:</h4>
+                        <div class="partner-logos">
+                            <img src="https://via.placeholder.com/150x80?text=SPORTS+BRAND" alt="Sports Brand">
+                            <img src="https://via.placeholder.com/150x80?text=MEDIA+PARTNER" alt="Media Partner">
+                            <img src="https://via.placeholder.com/150x80?text=SPONSOR" alt="Sponsor">
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="rules">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tournament Rules</h2>
+            </div>
+            
+            <div class="rules-container">
+                <div class="rule-item">
+                    <img src="1.jpg" alt="Match Format" class="rule-image">
+                </div>
+                <div class="rule-item">
+                    <img src="2.jpg" alt="Scoring System" class="rule-image">
+                </div>
+                <div class="rule-item">
+                    <img src="3.jpg" alt="Dress Code" class="rule-image">
+                </div>
+                <div class="rule-item">
+                    <img src="4.jpg" alt="Code of Conduct" class="rule-image">
+                </div>
+		<div class="rule-item">
+                    <img src="5.jpg" alt="Code of Conduct" class="rule-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams" class="teams">
+        <div class="container">
+            <div class="section-title">
+                <h2>Participating Teams</h2>
+            </div>
+            
+            <div class="teams-container">
+                <!-- Team 1 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">VORTEX VIPERS</h3>
+                    </div>
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+				<th>Matrix Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+  <tr>
+    <td>1</td>
+    <td>MUHAMMAD SYAFIQ DANIAL BIN MOHD FAIZAL</td>
+    <td>2240470</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>NUR AMNAH NAFISAH BINTI ARIFIN</td>
+    <td>2240571</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>RAZIN IMAN BIN ABDUL AZIZ</td>
+    <td>2240586</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>ADAM MUZAFFAR BIN AHMAD NAZAR</td>
+    <td>2240493</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>ALLYSHA HAZIQA BINTI HISHAMUDDIN</td>
+    <td>2240503</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>NURUL NURSYAZLIANA NATRAH BINTI ISMAIL</td>
+    <td>2240583</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>MUHAMMAD AKMAL BIN ROSLAN</td>
+    <td>2240531</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>NUR ALEEZA BINTI AZMY</td>
+    <td>2240569</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>MUHAMMAD HARRIS NAJMI BIN YUSNAIDI</td>
+    <td>2240673</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>INTAN ZULAIKHA BINTI ANUAR</td>
+    <td>2240617</td>
+  </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Team 2 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">TEAM KAKI PUKUL</h3>
+                    </div>
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+				<th>Matrix Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+  <tr>
+    <td>1</td>
+    <td>MOHAMAD HAIKAL ZHAHIRIN BIN AB RASID</td>
+    <td>2230381</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>NUR'AINA NAJIHAH BINTI MOHAMED ROZI</td>
+    <td>2230218</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>MUHAMMAD NURAMIRUL AFIQ BIN MAD AZHAR</td>
+    <td>2230491</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>MUHAMMAD KHAIRULLAH HASRAF BIN ROSLI</td>
+    <td>2230485</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>RANI HAZWANI BINTI HAFIZI</td>
+    <td>2230810</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>INTAN QRAISYA BINTI ABU THALIB</td>
+    <td>7240129</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>MUHAMMAD MUSTAQIM BIN HAMSAH</td>
+    <td>2230391</td>
+  </tr>
+                    </table>
+                </div>
+                
+                <!-- Team 3 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">NET TERBANG</h3>
+                    </div>
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+				<th>Matrix Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+  <td>1</td>
+  <td>PARVIN NAATHANN A/L WILSON NATHAN</td>
+  <td>1240911</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>SITI ZULAIKA BINTI MOHD SHARAN</td>
+  <td>1240729</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>WONG YE HENG</td>
+  <td>2220061</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>MUHAMMAD IRFAN BIN ISMAIL</td>
+  <td>2210129</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>NUR ALEYA FATIHAH BT AZLI</td>
+  <td>1240294</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>NUR FADHILAH NAJIHAH BINTI MOHD SOFIAN</td>
+  <td>2210067</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>MUHAMMAD FIRDAUS BIN ROHAIZAD</td>
+  <td>2230059</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>NUR ALEYA FATIHAH BT AZLI</td>
+  <td>1240294</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>ALZRULLAH BIN RAMLY</td>
+  <td>1240424</td>
+</tr>
+                        </tbody>
+                    </table>
+                </div>
+
+<!-- Team 4 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">GOYANG BT</h3>
+                    </div>
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+				<th>Matrix Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+  <tr>
+  <td>1</td>
+  <td>PKDT DHIVYESSH A/L MOHANASUNDARAM</td>
+  <td>2240887</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>PKDT NUR HUSNINA BINTI SAIFUL AZHAR</td>
+  <td>2230683</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>PKDT MUHAMMAD LUQMAN HAKIMI BIN MOHD RADZUAN</td>
+  <td>2230282</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>PKDT MUHAMMAD AMMAR AIMAN BIN ABD HALIM</td>
+  <td>2230275</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>NUR HANIM BINTI MOHD ZAHIR</td>
+  <td>2240884</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>MEESHAJIT KAUR A/P HARCHARANJIT SINGH</td>
+  <td>2240887</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>PKDT MUHAMMAD ZUBAIR BIN ROSLAN</td>
+  <td>2230493</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>THARANE A/P RAVEENDRAN</td>
+  <td>2240873</td>
+</tr>
+                        </tbody>
+                    </table>
+                </div>
+
+<!-- Team 5 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">FIREFLY</h3>
+                    </div>
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+				<th>Matrix Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+  <tr>
+  <td>1</td>
+  <td>PKDT MUHAMMAD MUSLIM BIN SUZAINI</td>
+  <td>2230679</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>NADIA NADZEERAH BINTI SALIHANG</td>
+  <td>2230682</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>QHAIRUDDIN AMMAR BIN HAIROL</td>
+  <td>2230690</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>EAROL AFIAN EPIN</td>
+  <td>2230657</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>HALIZA BINTI RAZALI</td>
+  <td>2230784</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>NUR AIMIE NATASYA MOHD NASIR</td>
+  <td>2230802</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>IKMAL IZZHAN BIN ROZAILAN KAMIL</td>
+  <td>2230885</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>NUR ANGELLIA NATASHA BINTI ABDULLLAH</td>
+  <td>2230803</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>NORAZLINAH BINTI SAMSUDIN</td>
+  <td>2230592</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>MUHAMMAD ALIF NIZMAN BIN ROHAIZAN</td>
+  <td>2230566</td>
+</tr>
+                        </tbody>
+                    </table>
+                </div>
+
+<!-- Team 6 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">KAKI SPIN</h3>
+                    </div>
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+				<th>Matrix Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+  <tr>
+  <td>1</td>
+  <td>MUHAMMAD MIRZA HAREEZ BIN ZUHAIRI</td>
+  <td>2240425</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>NUR FATEHAH ALEEYA BT MOHD YUSOF</td>
+  <td>7240375</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>IVAN CHONG ZHE WEI</td>
+  <td>7240327</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>MUHAMMAD ZULFIKRI BIN ZAKARIA</td>
+  <td>7230203</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>NIK NUR SA'ADAH BINTI NIK AIDI</td>
+  <td>2230168</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>SITI NUR HUSNA SYUHADA BINTI NORAZMAN</td>
+  <td>2230184</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>MUHAMMAD FAZLEE BIN KHAIRUDIN</td>
+  <td>2230670</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>BALQISH ADRINA BINTI ROSLI</td>
+  <td>7240119</td>
+</tr>
+                        </tbody>
+                    </table>
+                </div>
+
+<!-- Team 7 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">WARRIORS OF UNITY</h3>
+                    </div>
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+				<th>Matrix Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+  <tr>
+  <td>1</td>
+  <td>SUVANESH A/L PRAKESH</td>
+  <td>2241004</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>NG ZHI YEE</td>
+  <td>1240282</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>MUHAMMAD LUQMANUL HAKIM BIN AZMYE</td>
+  <td>2240463</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>DISHARATHAN</td>
+  <td>2240257</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>SITI QISTINA SYAKIRAH BINTI NAZRON</td>
+  <td>2240487</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>SAYYIDAH BINTI BAHARUDDIN</td>
+  <td>2240490</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>KUGGEN A/L GUNASILAN</td>
+  <td>2240299</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>NOR ATIKAH BINTI HASAN</td>
+  <td>2240481</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>NUR FATIHAH HUSNA BINTI MOHD FAUZI</td>
+  <td>2240475</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>NURUL SYAFIQAH BINTI AHMAD HAFIDZI</td>
+  <td>2240486</td>
+</tr>
+                        </tbody>
+                    </table>
+                </div>
+
+<!-- Team 8 -->
+                <div class="team-card">
+                    <div class="team-header">
+                        <h3 class="team-name">NOCTURNE</h3>
+                    </div>
+                    <table class="players-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+				<th>Matrix Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+  <tr>
+  <td>1</td>
+  <td>MUHAMMAD AZIZZUL QHUSAINIE BIN MOHAMAD</td>
+  <td>2240225</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>NUR FARAH HANIM BINTI NOR AZMI</td>
+  <td>2240226</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>NUR IEMAN ALIFF BIN AZIZ</td>
+  <td>2240210</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>DANISH EMMIR BIN SAIFUL ZAHRY</td>
+  <td>2240196</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>NURUL HIDAYAH BINTI FARAN</td>
+  <td>2240251</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>NUR FARAH HANIM BINTI NOR AZMI</td>
+  <td>2240226</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>MUHAMMAD AKMAL BIN MOHD HILMI</td>
+  <td>2240204</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>MIA AISHAH SOLEHAH BINTI MASHURI</td>
+  <td>2240199</td>
+</tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixture Section -->
+    <section id="fixture" class="fixture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Match Fixtures</h2>
+            </div>
+            
+            <table class="fixture-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+			<th>Venue</th>
+                        <th>Time</th>
+                        <th>Match</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>May 10, 2025</td>
+			<td>TLKB RAYA PERMAI</td>
+                        <td>8:00 AM</td>
+                        <td>A1 VS A2</td>
+                        <td class="match-result">0-0</td>
+                    </tr>
+		    <tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>8:45 AM</td>
+    <td>B1 VS B2</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>9:30 AM</td>
+    <td>A3 VS A4</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>10:15 AM</td>
+    <td>B3 VS B4</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>11:00 AM</td>
+    <td>A2 VS A3</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>11:45 AM</td>
+    <td>B2 VS B3</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>12:30 PM</td>
+    <td>A4 VS A1</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>1:15 PM</td>
+    <td>B4 VS B1</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>2:00 PM</td>
+    <td>A1 VS A3</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>2:45 PM</td>
+    <td>B1 VS B3</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>3:30 PM</td>
+    <td>A2 VS A4</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>4:15 PM</td>
+    <td>B2 VS B4</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>4:30 PM</td>
+    <td>Champ. A VS 1st Runner B</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>4:30 PM</td>
+    <td>Champ. B VS 1st Runner A</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>5:15 PM</td>
+    <td>Loser SF-1 VS Loser SF-2</td>
+    <td class="match-result">0-0</td>
+</tr>
+<tr>
+    <td>May 10, 2025</td>
+    <td>TLKB RAYA PERMAI</td>
+    <td>5:15 PM</td>
+    <td>Winner SF-1 VS Winner SF-2</td>
+    <td class="match-result">0-0</td>
+</tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Universiti Pertahanan Nasional Malaysia, Kem Perdana Sungai Besi, 57100 Sungai Besi, WPKL.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:smashupnm@gmail.com">smashupnm@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <a href="tel:+601161225464">+60 11-61225464</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 12:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-table-tennis"></i>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#rules">Rules</a>
+                <a href="#teams">Teams</a>
+                <a href="#fixture">Fixture</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            
+            <p class="copyright">© 2023 Fly Smash Championship. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add fixed header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+	// Mobile navigation toggle
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    
+    // Optional: Change icon from bars to X
+    const icon = navToggle.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Close menu when clicking links
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        navToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+    });
+});
+    </script>
+</body>
+</html>
